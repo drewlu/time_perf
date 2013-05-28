@@ -14,16 +14,6 @@
  */
 
 inline uint64_t GetRDTSC() {
-#if 0
-   asm {
-      /* Flush the pipeline */
-      XOR eax, eax
-      CPUID
-      /* Get RDTSC counter in edx:eax */
-      RDTSC
-   }
-#endif
-
    asm("XOR %eax, %eax\n\t"
        "CPUID\n\t"
        "RDTSC");
