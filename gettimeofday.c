@@ -1,6 +1,6 @@
 #include <sys/time.h>
 #include <stdio.h>
-#include <util.h>
+#include "util.h"
 
 
 int main(int argc, char *argv[]) {
@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     }
     uint64_t end = now_usecs();
 
-    printf("time passed for %llu times gettimeofday():%llu(us), avg:%llu(us)\n", n, end-now, (end-now)*1.0/n);
+    printf("time passed for %llu times gettimeofday():%llu(us), avg:%llu(ns)\n", n, end-begin, (end-begin)*1000/n);
 
     return 0;
 }
